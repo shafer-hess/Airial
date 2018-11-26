@@ -16,11 +16,19 @@ var settings = {
     var parsed = JSON.stringify(response.data.current.pollution.aqius)
     document.getElementById("banner").querySelector("#aqi").innerHTML = parsed;    
 
-    var image = "<img src=\"" + images + response.data.current.weather.ic + ".png" + "\"/>";
-    console.log(image);
+    var weather = {
+        image: "<img src=\"" + images + response.data.current.weather.ic + ".png" + "\"/>",
+        temp: (response.data.current.weather.tp * 9/5) + 32,
+        humid: response.data.current.weather.hu,
+        pressure: response.data.current.weather.pr,
+        wspeed: response.data.current.weather.ws * 2.237
+    };
 
+    console.log(weather);
+
+    //var image = "<img src=\"" + images + response.data.current.weather.ic + ".png" + "\"/>";
     var city = document.getElementById("list1").querySelector("#inner");
-    city.innerHTML = image + "<p>" + response.data.city + "<p>";
+    city.innerHTML = weather.image + "<p>" + response.data.city + "<p>";
   });
 
 
