@@ -1,0 +1,79 @@
+* {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+body {
+    background-color: rgb(63, 62, 62);  
+    margin: 0;  
+}
+
+.navbar {
+    background-color: rgb(37, 36, 36); 
+    height: 80px;
+}
+
+.nav-btn {
+    float: right;
+    background-color: rgb(37, 36, 36);  
+    font-size: 24;
+    font-weight: bolder;  
+    border: none;
+    color: white;
+    width: 120px;
+    height: 80px;
+}
+
+.nav-btn:hover {
+    background-color: rgb(255, 255, 255);    
+    border: none;
+    color:  rgb(63, 62, 62); 
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    text-align: center;
+}
+
+#aqi {
+    line-height: 200px;
+    width: 100%;
+    font-size: 24pt;
+    font-weight: bolder;
+}
+
+ul {
+    height: 300px;
+}
+
+#cities-list {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#list, #list1 {
+    color: black;
+    vertical-align: top;
+    font-weight: bolder;
+    margin-left: 15px;
+    margin-right: 15px;
+    list-style-type: none;
+    display: inline-block;
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+#list img, #list1 img {
+    padding-top: 30px;
+    height: 70px;
+    width: 70px;
+
+}
+
+#list:hover, #list1:hover {
+    background-color: rgb(219, 186, 75);
+}
