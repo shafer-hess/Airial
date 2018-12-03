@@ -7,7 +7,7 @@
 	$pass = $_GET["password"];
 	$addr = $_GET["email"];
 	
-	$cleanair = new mysqli('cleanair.cuxgs3tcx7pv.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
+	$cleanair = new mysqli('cleanair.czp4mdmfzwfg.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
 	if ($cleanair->connect_errno) {
 		printf("Connect failed: %s\n", $cleanair->connect_error);
 		exit();
