@@ -12,13 +12,13 @@
 
 	#printf("Attempting to login to %s with input password %s\n", $username, $password);
 
-	$buildr = new mysqli('buildr.cuxgs3tcx7pv.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
-	if ($buildr->connect_errno) {
-		printf("Connection to database failed: %s\n", $buildr->connect_error);
+	$cleanair = new mysqli('buildr.cuxgs3tcx7pv.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
+	if ($cleanair->connect_errno) {
+		printf("Connection to database failed: %s\n", $cleanair->connect_error);
 		exit();
 	}
 
-	if ($result = $buildr->query("SELECT * FROM user WHERE username = \"$username\"")) {
+	if ($result = $cleanair->query("SELECT * FROM user WHERE username = \"$username\"")) {
 		if ($row = $result->fetch_array()) {
 			#printf("User exists... Verifying passwords...\n");
 			$hashed_pass = $row['password'];
@@ -37,5 +37,5 @@
 			$result->close();
 		}
 	}
-	$buildr->close();
+	$cleanair->close();
 ?>
