@@ -3,8 +3,6 @@
 	#	 POST or GET "username", "password", "email", "firstName", "lastName" forms
 	#			to "IPv4 address"/createAccount.php
 	# use $_GET for URL data
-	$first = $_GET["firstName"];
-	$last = $_GET["lastName"];
 	$username = $_GET["username"];
 	$pass = $_GET["password"];
 	$addr = $_GET["email"];
@@ -34,7 +32,7 @@
 	}
 
 	$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-	$cleanair->query("INSERT INTO user (username, password, email, firstName, lastName) VALUES (\"$username\", \"$hashed_pass\", \"$addr\", \"$first\", \"$last\")");
+	$cleanair->query("INSERT INTO user (username, password, email) VALUES (\"$username\", \"$hashed_pass\", \"$addr\")");
 	$cleanair->close();
 	echo 1;
 ?>
