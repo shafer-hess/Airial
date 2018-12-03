@@ -1,0 +1,101 @@
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    background-color: rgb(63, 62, 62);  
+    margin: 0;  
+}
+
+.title {
+    position: absolute;
+    line-height: 24px;
+    font-size: 24;
+    padding-left: 40px;
+    color: white;
+}
+
+.ourlogo {
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 105px;
+}
+
+.navbar {
+    background-color: rgb(37, 36, 36); 
+    font-size: 24;
+    height: 80px;
+}
+
+.nav-btn {
+    float: right;
+    text-align: center;
+    background-color: rgb(37, 36, 36);  
+    font-size: 18;
+    font-weight: bolder;  
+    border: none;
+    color: white;
+    width: 140px;
+    height: 80px;
+}
+
+.nav-btn:hover {
+    background-color: rgb(255, 255, 255);    
+    border: none;
+    color:  rgb(63, 62, 62); 
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+}
+
+#aqi {
+    line-height: 300px;
+    width: 100%;
+    font-size: 24pt;
+    font-weight: bolder;
+}
+
+ul {
+    padding: 0;
+    height: 300px;
+}
+
+#cities-list {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#list, #list1 {
+    color: black;
+    vertical-align: top;
+    font-weight: bolder;
+    margin-left: 15px;
+    margin-right: 15px;
+    list-style-type: none;
+    display: inline-block;
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+#list img, #list1 img {
+    padding-top: 30px;
+    height: 70px;
+    width: 70px;
+
+}
+
+/* #inner {
+    background-color: rgb(128, 224, 104); 
+    border-radius: 20px 20px 0px 0px;
+} */
+
+#list:hover, #list1:hover {
+    background-color: rgb(219, 186, 75);
+}
