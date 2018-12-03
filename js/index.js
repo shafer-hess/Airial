@@ -29,7 +29,11 @@ $.ajax(settings).done(function (response) {
     city.innerHTML = weather.image + "<p>" + response.data.city + "<p>";
 
 
-    var element = document.getElementById("login");
-    $(element).toggle();
-    console.log(element);
+    var login = document.getElementById('login');
+    var sign = document.getElementById('sign-up');
+    var name = document.getElementById('current-user');
+
+    $(login).toggle();
+    $(sign).toggle();
+    $(name).toggle();
 });
