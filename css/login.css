@@ -33,7 +33,7 @@ form {
     height: 30px;
 }
 
-.signup-wrapper {
+.login-wrapper {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -41,12 +41,12 @@ form {
 }
 
 .form-wrapper {
-    box-shadow: 7px 7px 7px black;
+    box-shadow: 7px 7px 7px black; 
     padding: 30px;
     border-radius: 50px;
     background-color: rgb(37, 36, 36); 
     width: 40%;
-    height: 41%;
+    height: 33%;
 }
 
 .submit-btn {
