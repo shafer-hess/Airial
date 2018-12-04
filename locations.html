@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Airial - Add Location</title>
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <link rel="stylesheet" href="css/locations.css">
+	<link rel="shortcut icon" href="favicons/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="favicons/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="favicons/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicons/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16.png">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="title">
+                <h3>Airial</h3>
+            </div>
+	    <div class="ourlogo" id="logo-container" href="http://18.224.18.196">
+		<img src="favicons/favicon-64.png">
+	    </div>
+        </nav>
+	<div class="login-wrapper">
+		<div class="form-wrapper">
+			<h4>Select a Country</h4>
+			<select id="countries">
+				<option value="">Select Country</option>
+			</select>
+			
+			<h4>Select a State</h4>
+			<select id="states">
+				<option value="">Select State</option>
+			</select>
+		
+			<h4>Select a City</h4>
+			<select id="cities">
+				<option value="">Select City</option>
+			</select>
+
+			<div class="submit-class" style="text-align:center"><button type="submit" class="submit-btn" value="Submit">Add Location</button></div>
+		</div>
+	</div>
+
+	<script src="js/locationProcessing.js"></script>
+
+	<script>
+	//redirect on logo click
+	$('#logo-container').click(function() {
+		window.location.href = "index.html";	
+	})
+	</script>
+    </body>
+</html>
