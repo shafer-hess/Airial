@@ -1,5 +1,6 @@
 
-const key = 'HpcLCCff9KFeyhHiS';
+//const key = 'HpcLCCff9KFeyhHiS';
+const key = 'SunWZiorHPdTniAk2';
 const images = 'https://www.airvisual.com/images/';
 
 var settings = {
@@ -29,11 +30,7 @@ $.ajax(settings).done(function (response) {
     city.innerHTML = weather.image + "<p>" + response.data.city + "<p>";
 
 
-    var login = document.getElementById('login');
-    var sign = document.getElementById('sign-up');
-    var name = document.getElementById('current-user');
-
-    $(login).toggle();
-    $(sign).toggle();
-    $(name).toggle();
+    var element = document.getElementById("login");
+    //$(element).toggle();
+    console.log(element);
 });
