@@ -1,7 +1,6 @@
 <?php
-	$username = $_POST["username"];
-	$pass = $_POST["password"];
-	$addr = $_POST["email"];
+	$username = $_GET["username"];
+	$location = $_GET["location"];
 
 	$cleanair = new mysqli('cleanair.czp4mdmfzwfg.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
 	if ($cleanair->connect_errno) {
@@ -28,7 +27,7 @@
 	}
 
 	$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-	$cleanair->query("INSERT INTO users (username, password, email) VALUES (\"$username\", \"$hashed_pass\", \"$addr\")");
+	$cleanair->query("INSERT INTO users (username, password, email, firstName, lastName) VALUES (\"$username\", \"$hashed_pass\", \"$addr\", \"$first\", \"$last\")");
 	$cleanair->close();
 	echo 1;
 ?>
