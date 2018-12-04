@@ -3,6 +3,9 @@
 	#		POST or GET "username" and "password" forms to "IPv4 address"/loginAuthentication.php
 	
 	# use $_GET for URL data
+
+	session_start();
+	
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
@@ -27,6 +30,7 @@
 				$fullResult = $row['email'];
 				#$fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
 				$fullResult = $row['username'];
+				$_SESSION['username'] = $row['username'];
 				echo $fullResult;
 			} else {
 				#echo "Invalid password!\n";

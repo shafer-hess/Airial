@@ -1,6 +1,8 @@
 <?php
 	$username = $_GET["username"];
-
+	$response = array();
+	$locations = array();
+	
 	$cleanair = new mysqli('cleanair.czp4mdmfzwfg.us-east-2.rds.amazonaws.com', 'youseethat', 'gustavorodriguezrivera', 'cleanair', '3306');
 	if ($cleanair->connect_errno) {
 		printf("Connect failed: %s\n", $cleanair->connect_error);
@@ -22,12 +24,17 @@
 			$cleanair->close();
 			exit();
 		} else {
-			$allLocations = "";
 			while ($row = $result->fetch_array()) {
-				$allLocations = $allLocations . $row['city'] . "||";
+				$location = preg_split("|", $row['city']);
+				$locations[] = array('Country' => $location[0], 'State' => $location[1], 'City' => $location[2]); 	
 			}
-			echo $allLocations;
+
+			$response['saved'] = $locations;
+			$encoded = json_encode($response, JSON_PRETTY_PRINT); 
+		
 			$result->close();
+			$cleanair->close();
+			return $encoded;
 		}
 	}
 	$cleanair->close();

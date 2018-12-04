@@ -1,14 +1,9 @@
-<?php
-	session_start()
-?>
-
 <html>
     <head>
-        <title>Airial - Track AQI Anywhere</title>
+        <title>Airial - Add Location</title>
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <script src="js/index.js"></script>
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/locations.css">
 	<link rel="shortcut icon" href="favicons/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
 	<link rel="icon" type="image/png" sizes="196x196" href="favicons/favicon-192.png">
@@ -23,39 +18,37 @@
             <div class="title">
                 <h3>Airial</h3>
             </div>
-	    <div class="ourlogo" id="logo-container">
+	    <div class="ourlogo" id="logo-container" href="http://18.224.18.196">
 		<img src="favicons/favicon-64.png">
 	    </div>
-            <div class="btn-wrapper">
-                <button class="nav-btn" id="signup">Sign Up</button>
-                <button class="nav-btn" id="login">Login</button>
-            </div>
         </nav>
+	<div class="login-wrapper">
+		<div class="form-wrapper">
+			<h4>Select a Country</h4>
+			<select id="countries">
+				<option value="">Select Country</option>
+			</select>
+			
+			<h4>Select a State</h4>
+			<select id="states">
+				<option value="">Select State</option>
+			</select>
+		
+			<h4>Select a City</h4>
+			<select id="cities">
+				<option value="">Select City</option>
+			</select>
 
-        <div class="main" id="banner">
-            <div id="aqi"></div>
-        </div>
+			<div class="submit-class" style="text-align:center"><button type="submit" class="submit-btn" value="Submit">Add Location</button></div>
+		</div>
+	</div>
 
-        <div class="saved-cities" id="cities-list">
-            <ul>
-                <li id="list1"><div id="inner"></div></li>
-                <li id="list"></li>
-                <li id="list"></li>
-            </ul>
-        </div>
-	
+	<script src="js/locationProcessing.js"></script>
+
 	<script>
 	//redirect on logo click
 	$('#logo-container').click(function() {
 		window.location.href = "index.html";	
-	})
-	//redirect on signup click
-	$('#signup').click(function() {
-		window.location.href = "signup.html";	
-	})
-	//redirect on login click
-	$('#login').click(function() {
-		window.location.href = "login.html";	
 	})
 	</script>
     </body>

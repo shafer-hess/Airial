@@ -1,4 +1,3 @@
-
 //const key = 'HpcLCCff9KFeyhHiS';
 const key = 'SunWZiorHPdTniAk2';
 const images = 'https://www.airvisual.com/images/';
