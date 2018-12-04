@@ -59,6 +59,12 @@ form {
     width: 40%;
 }
 
+.submit-btn:hover {
+    background-color: rgb(219,186,75);
+    border: none;
+    color: rgb(37,36,36);
+}
+
 .title {
    position: absolute;
    line-height: 24px;
