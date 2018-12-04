@@ -25,19 +25,42 @@
 
 	<div class="login-wrapper">
 		<div class="form-wrapper">
-			<form action="/php/loginAuthentication.php" method="post">
-			        <h3 class="label">Username:</h3><input name="username" type="text" class="inputs" required>
-			        <h3 class="label">Password:</h3><input name="password" type="password" class="inputs" required><br><br><br>
-				<div class="submit-class" style="text-align:center"><button type="submit" class="submit-btn" value="Login">Login</button></div>
+			<form>
+			        <h3 class="label">Username:</h3><input name="username" type="text" class="inputs" id="username" required>
+			        <h3 class="label">Password:</h3><input name="password" type="password" class="inputs" id="password" required><br><br><br>
 			</form>
+			<div class="submit-class" style="text-align:center"><button type="submit" class="submit-btn" value="Login" id="submit-int">Login</button></div>
 		</div>
 	</div>
 
 	<script>
-	//redirect on logo click
-	$('#logo-container').click(function() {
-		window.location.href = "index.html";	
-	})
+
+	$('#submit-int').click(function() {
+			let data = {
+				'username': $("#username").val(),
+				'password': $("#password").val(),
+			}
+
+			$.ajax({
+				"type": "POST",
+				"url": "php/loginAuthentication.php",
+				"data": data,
+				"success": function(response) {
+					console.log(response); 
+					if(response !== "0" && response !== "2") {
+						window.location.href = "index.html";
+					}
+					else {
+						alert("Incorrect credentials, Please try again");
+					}
+				}
+			});
+		});
+
+		//redirect on logo click
+		$('#logo-container').click(function() {
+			window.location.href = "index.html";	
+		})
 	</script>
     </body>
 </html>
