@@ -41,6 +41,7 @@ form {
 }
 
 .form-wrapper {
+    box-shadow: 7px 7px 7px black;
     padding: 30px;
     border-radius: 50px;
     background-color: rgb(37, 36, 36); 
