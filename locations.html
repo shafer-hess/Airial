@@ -53,7 +53,6 @@
 				"url": "php/getSessionUser.php",
 				"data": ""
 			}).done(function(response) {
-				console.log(response);
 				user = response;
 			
 				console.log(user);
@@ -66,7 +65,30 @@
 					let formatted;
 					if(country !== "" && state !== "" && city !== "") {
 						formatted = country + "|" + state + "|" + city;
+						
+						let request = {
+							"username": user,
+							"location": formatted
+						}
+					
+						$.ajax({
+							"type": "POST",
+							"url": "php/addLocation.php",
+							"data": request,
+							"success": function(response) {	
+								if(response === "1") {
+									window.location.href = "index.html";
+								} else if(response === "2") {
+									alert("This location has already been added");
+								} else if(response === "0") {
+									alert("User not found");
+								}
+							}
+						});
+					} else {
+						alert("Please select a location");
 					}
+					
 				} else {
 					alert("Please log in to add locations");
 				}

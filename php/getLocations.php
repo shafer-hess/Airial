@@ -25,7 +25,7 @@
 			exit();
 		} else {
 			while ($row = $result->fetch_array()) {
-				$location = preg_split("|", $row['city']);
+				$location = preg_split("/[|]/", $row['city']);
 				$locations[] = array('Country' => $location[0], 'State' => $location[1], 'City' => $location[2]); 	
 			}
 
@@ -34,7 +34,7 @@
 		
 			$result->close();
 			$cleanair->close();
-			return $encoded;
+			echo $encoded;
 		}
 	}
 	$cleanair->close();

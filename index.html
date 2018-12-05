@@ -45,18 +45,40 @@
         </div>
 	
 	<script>
-	//redirect on logo click
-	$('#logo-container').click(function() {
-		window.location.href = "index.html";	
-	})
-	//redirect on signup click
-	$('#signup').click(function() {
-		window.location.href = "signup.html";	
-	})
-	//redirect on login click
-	$('#login').click(function() {
-		window.location.href = "login.html";	
-	})
+
+		$.ajax({
+			"type": "POST",
+			"url": "php/getSessionUser.php",
+			"data": ""	
+		}).done(function(response) {
+			let user = response;
+			if(user && user !== "") {				
+				
+				let request = { "username": user }
+
+				$.ajax({
+					"type": "GET",
+					"url": "php/getLocations.php",
+					"data": request,
+					"success": function(response) {
+						console.log(JSON.parse(response));
+					}
+				});
+			}
+		});
+
+		//redirect on logo click
+		$('#logo-container').click(function() {
+			window.location.href = "index.html";	
+		})
+		//redirect on signup click
+		$('#signup').click(function() {
+			window.location.href = "signup.html";	
+		})
+		//redirect on login click
+		$('#login').click(function() {
+			window.location.href = "login.html";	
+		})
 	</script>
     </body>
 </html>
