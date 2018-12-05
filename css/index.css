@@ -39,6 +39,10 @@ body {
     height: 80px;
 }
 
+#logout {
+   display: none;
+}
+
 .nav-btn:hover {
     background-color: rgb(255, 255, 255);    
     border: none;
