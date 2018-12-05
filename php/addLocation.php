@@ -16,6 +16,15 @@
 		}
 		$result->close();
 	}
+	if ($result = $cleanair->query("SELECT * FROM cities WHERE username = \"$username\" AND city = \"$location\"")) {
+		if ($result->num_rows > 0) {
+			echo 2;
+			$result->close();
+			$cleanair->close();
+			exit();
+		}
+		$result->close();
+	}
 	$cleanair->query("INSERT INTO cities (username, city) VALUES (\"$username\", \"$location\")");
 	$cleanair->close();
 	echo 1;

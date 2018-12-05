@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$username = $_POST["username"];
 	$pass = $_POST["password"];
 	$addr = $_POST["email"];
@@ -30,5 +31,6 @@
 	$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 	$cleanair->query("INSERT INTO users (username, password, email) VALUES (\"$username\", \"$hashed_pass\", \"$addr\")");
 	$cleanair->close();
+	$_SESSION['username'] = $username;
 	echo 1;
 ?>
