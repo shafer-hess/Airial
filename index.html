@@ -1,7 +1,3 @@
-<?php
-	session_start()
-?>
-
 <html>
     <head>
         <title>Airial - Track AQI Anywhere</title>
@@ -29,6 +25,7 @@
             <div class="btn-wrapper">
                 <button class="nav-btn" id="signup">Sign Up</button>
                 <button class="nav-btn" id="login">Login</button>
+		<button class="nav-btn" id="logout">Logout</button>
             </div>
         </nav>
 
@@ -52,8 +49,14 @@
 			"data": ""	
 		}).done(function(response) {
 			let user = response;
+			console.log(user);
 			if(user && user !== "") {				
-				
+				var el1 = document.getElementById("login");
+				var el2 = document.getElementById("signup");
+				var el3 = document.getElementById("logout");
+				$(el1).toggle();
+				$(el2).toggle();
+				$(el3).toggle();
 				let request = { "username": user }
 
 				$.ajax({
@@ -78,6 +81,16 @@
 		//redirect on login click
 		$('#login').click(function() {
 			window.location.href = "login.html";	
+		})
+		//redirect on logout click
+		$('#logout').click(function() {
+			$.ajax({
+				"type": "POST",
+				"url": "php/killSession.php",
+				"data": ""
+			}).done(function(response) {
+				window.location.href = "index.html";
+			});
 		})
 	</script>
     </body>
