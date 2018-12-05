@@ -26,8 +26,6 @@
 			#printf("Returned hash: %s\n", $hashed_pass);
 			if (password_verify($password, $hashed_pass)) {
 				#echo "Password is valid!\n";
-				//$fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
-				$fullResult = $row['email'];
 				#$fullResult = $row['email'] . "-" . $row['firstName'] . "-" . $row['lastName'];
 				$fullResult = $row['username'];
 				$_SESSION['username'] = $row['username'];
