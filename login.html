@@ -1,3 +1,7 @@
+<?php
+	session_start()
+?>
+
 <html>
     <head>
         <title>Airial - Track AQI Anywhere</title>
@@ -35,7 +39,7 @@
 
 	<script>
 
-	$('#submit-int').click(function() {
+		$('#submit-int').click(function() {
 			let data = {
 				'username': $("#username").val(),
 				'password': $("#password").val(),
