@@ -39,17 +39,44 @@
 				<option value="">Select City</option>
 			</select>
 
-			<div class="submit-class" style="text-align:center"><button type="submit" class="submit-btn" value="Submit">Add Location</button></div>
+			<div class="submit-class" style="text-align:center"><button class="submit-btn" value="Submit" id="submit-int">Add Location</button></div>
 		</div>
 	</div>
 
 	<script src="js/locationProcessing.js"></script>
 
-	<script>
-	//redirect on logo click
-	$('#logo-container').click(function() {
-		window.location.href = "index.html";	
-	})
+	<script type="text/javascript">
+		$("#submit-int").click(function() {
+			var user;
+			$.ajax( {
+				"type": "POST",
+				"url": "php/getSessionUser.php",
+				"data": ""
+			}).done(function(response) {
+				console.log(response);
+				user = response;
+			
+				console.log(user);
+
+				if(user !== "" && user) {
+					let country = $("#countries").val();
+					let state = $("#states").val();
+					let city = $("#cities").val();
+
+					let formatted;
+					if(country !== "" && state !== "" && city !== "") {
+						formatted = country + "|" + state + "|" + city;
+					}
+				} else {
+					alert("Please log in to add locations");
+				}
+			});
+		})
+
+		//redirect on logo click
+		$('#logo-container').click(function() {
+			window.location.href = "index.html";	
+		})
 	</script>
     </body>
 </html>
