@@ -30,7 +30,33 @@
         </nav>
 
         <div class="main" id="banner">
-            <div id="aqi"></div>
+		<div class="data-wrapper">
+			<div class="loc">
+				<div class="location" id="city"></div>
+			</div>
+
+			<div class="aqi-wrapper">
+				<div class="status">
+					<div id="aqi"></div>
+				</div>		
+			</div>
+		
+			<div class="weather-wrapper">
+				<div class="weather">
+					<div class="icon" id="wimage"></div>
+					<div class="temp" id="tp"></div>
+				</div>
+				<div class="info">
+					<div class="info-inner">
+					<div class="winfo"></div>
+					<div class="winfo" id="humidity"></div>
+					<div class="winfo" id="pressure"></div>
+					<div class="winfo" id="speed"></div>
+					<div class="winfo"></div>
+					</div>
+				</div>
+			</div>
+		</div>
         </div>
 
         <div class="saved-cities" id="cities-list">
@@ -42,7 +68,6 @@
         </div>
 	
 	<script>
-
 		$.ajax({
 			"type": "POST",
 			"url": "php/getSessionUser.php",
