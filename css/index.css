@@ -50,18 +50,107 @@ body {
 }
 
 .main {
+    justify-content: center;
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 400px;
     background-color: white;
     text-align: center;
 }
 
 #aqi {
-    line-height: 300px;
     width: 100%;
+    font-size: 72pt;
+    font-weight: bolder;
+}
+
+.data-wrapper {
+    width: 40%;
     font-size: 24pt;
     font-weight: bolder;
+}
+
+.location {
+   vertical-align: bottom;
+   height: 20%;
+   display: block;
+}
+
+.loc {
+   line-height: 120px;
+}
+
+.aqi-wrapper, .weather-wrapper {
+    vertical-align: top;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: white;
+    padding: 35px; 
+    width: 45%;
+    height: 80%;
+    display: inline-block;
+}
+
+.weather-wrapper {
+   padding: 0;
+}
+
+.status {
+   display: flex;
+   background-color: lime;
+   border-radius: 50px;
+   width: 100%;
+   height: 100%;
+   align-items: center;
+   justify-contents: center;
+}
+
+.weather, .info {
+   width: 45%;
+   height: 100%;
+   display: inline-block;
+   vertical-align: top;
+}
+
+.weather {
+}
+
+.icon {
+   height: 60%;
+   vertical-align: top;
+}
+
+.temp {
+   font-size: 24pt;
+   height: 40%;
+}
+
+.winfo {
+   font-size: 14pt;
+   font-weight: bolder;
+   text-align: left;
+   height: 20%;
+   width: 100%;
+}
+
+.icon img {
+   padding-top: 70px;
+   width: 70%;
+}
+
+.info-inner {
+   display: flex;
+   height: 100%;
+   flex-flow: row wrap;
+   align-items: center;
+}
+
+h6 {
+   margin: 0;
+}
+
+#banner {
+    box-shadow: 7px 7px 7px rgba(0,0,0,0.7);
 }
 
 ul {
@@ -75,10 +164,12 @@ ul {
 }
 
 #list, #list1 {
+    box-shadow: 7px 7px 7px rgba(0,0,0,0.5);
     color: black;
     vertical-align: top;
     font-weight: bolder;
     margin-left: 15px;
+    margin-top: 15px;
     margin-right: 15px;
     list-style-type: none;
     display: inline-block;
