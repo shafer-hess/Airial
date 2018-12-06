@@ -61,6 +61,7 @@ body {
 #aqi {
     width: 100%;
     font-size: 72pt;
+    color: white;
     font-weight: bolder;
 }
 
@@ -112,7 +113,10 @@ body {
    vertical-align: top;
 }
 
-.weather {
+#footer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .icon {
@@ -163,7 +167,7 @@ ul {
     text-align: center;
 }
 
-#list, #list1 {
+#list, #list1, #list-default {
     box-shadow: 7px 7px 7px rgba(0,0,0,0.5);
     color: black;
     vertical-align: top;
@@ -186,11 +190,11 @@ ul {
 
 }
 
-/* #inner {
-    background-color: rgb(128, 224, 104); 
-    border-radius: 20px 20px 0px 0px;
-} */
-
-#list:hover, #list1:hover {
-    background-color: rgb(219, 186, 75);
+#inner {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 72pt;
+   color: white;
 }
+

@@ -1,4 +1,5 @@
-const key = 'SunWZiorHPdTniAk2';
+//const key = 'SunWZiorHPdTniAk2';
+const key = 'HpcLCCff9KFeyhHiS';
 
 var countrySettings = {
 	"async": true,

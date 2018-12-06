@@ -4,6 +4,7 @@
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="js/index.js"></script>
+	<script src="js/loadData.js"></script>
         <link rel="stylesheet" href="css/index.css">
 	<link rel="shortcut icon" href="favicons/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="favicons/favicon.ico">
@@ -60,10 +61,8 @@
         </div>
 
         <div class="saved-cities" id="cities-list">
-            <ul>
-                <li id="list1"><div id="inner"></div></li>
-                <li id="list"></li>
-                <li id="list"></li>
+            <ul id="list-start">
+		<li id="list-default"><img src="plus.png" style="height: 200px; width: 150px; border-radius: 20px"/></li>
             </ul>
         </div>
 	
@@ -89,7 +88,31 @@
 					"url": "php/getLocations.php",
 					"data": request,
 					"success": function(response) {
-						console.log(JSON.parse(response));
+						let locations = JSON.parse(response);
+						console.log(locations);
+						
+						let settings = {						
+							"async": "true",
+							"crossDomain": "true",
+							"url": "",
+							"method": "GET",
+							"header": {}
+						}
+
+						let key = 'HpcLCCff9KFeyhHiS';
+
+						let appendList = "";
+						for(let loc of locations.saved) {
+							settings.url = 'http://api.airvisual.com/v2/city?city=' + loc.City + '&state=' + loc.State + '&country=' + loc.Country + '&key=' + key;
+													
+							$.ajax(settings).done(function(response) {
+								let aqi = response.data.current.pollution.aqius;
+								let color = getColor(aqi);
+								let card = '<li id="list"><div id="inner" style="background-color:' + color + '; height: 250px; border-radius: 20px 20px 0px 0px">' + aqi + '</div><div id="footer">' + loc.City + '</div></li>';
+								console.log(card);
+								$('#list-start').append(card);
+							});
+						}
 					}
 				});
 			}
@@ -107,6 +130,12 @@
 		$('#login').click(function() {
 			window.location.href = "login.html";	
 		})
+
+		//redirect to locations
+		$('#list-default').click(function() {
+			window.location.href = "locations.html";
+		});
+
 		//redirect on logout click
 		$('#logout').click(function() {
 			$.ajax({

@@ -53,7 +53,6 @@ $.ajax(settings).done(function (response) {
 	};
 
 	console.log(weather);
-	var city = document.getElementById("list1").querySelector("#inner");
     
 	//Populate Data
 	var loc = document.getElementById("city");
@@ -72,6 +71,4 @@ $.ajax(settings).done(function (response) {
 	wspeed.innerHTML = "Wind Speed:<br>" + weather.wspeed + "mph";
 
 	$("#aqi-color").css("background-color", color);
-
-	city.innerHTML = weather.image + "<p>" + response.data.city + "<p>";
 });
