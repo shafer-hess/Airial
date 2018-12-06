@@ -1,3 +1,4 @@
+![huh](https://github.com/shafer-hess/Airial/blob/master/favicons/favicon-32.png) 
 # Airial
 Airial provides realtime Air Quality Index information in an easy to navigate dashboard layout.
 
