@@ -181,6 +181,12 @@ ul {
     height: 300px;
     width: 200px;
     border-radius: 20px;
+    
+    transition: transform .2s;
+}
+
+#list-default:hover {
+    transform: scale(1.1);
 }
 
 #list img, #list1 img {
